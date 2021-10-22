@@ -1,15 +1,15 @@
-# gTTS
+# t2s
 
-**gTTS** (*Google Text-to-Speech*), a Python library and CLI tool to interface with Google Translate's text-to-speech API. 
+**t2s** (*Text-to-Speech*), a Python library and CLI tool to interface with Google Translate's text-to-speech API. 
 Write spoken `mp3` data to a file, a file-like object (bytestring) for further audio manipulation, or `stdout`. Or simply pre-generate Google Translate TTS request URLs to feed to an external program.
-<http://gtts.readthedocs.org/>
+<http://t2s.readthedocs.org/>
 
-[![PyPI version](https://img.shields.io/pypi/v/gTTS.svg)](https://pypi.org/project/gTTS/)
-[![Python versions](https://img.shields.io/pypi/pyversions/gTTS.svg)](https://pypi.org/project/gTTS/)
-[![Tests workflow](https://github.com/pndurette/gTTS/workflows/Tests/badge.svg)](https://github.com/pndurette/gTTS/actions)
+[![PyPI version](https://img.shields.io/pypi/v/t2s.svg)](https://pypi.org/project/t2s/)
+[![Python versions](https://img.shields.io/pypi/pyversions/t2s.svg)](https://pypi.org/project/gTTS/)
+[![Tests workflow](https://github.com/secretum-inc/t2s/workflows/Tests/badge.svg)](https://github.com/secretum-inc/t2s/actions)
 [![codecov](https://codecov.io/gh/pndurette/gTTS/branch/master/graph/badge.svg)](https://codecov.io/gh/pndurette/gTTS)
-[![Commits Since](https://img.shields.io/github/commits-since/pndurette/gTTS/latest.svg)](https://github.com/pndurette/gTTS/commits/)
-[![PyPi Downloads](http://pepy.tech/badge/gtts)](http://pepy.tech/project/gtts)
+[![Commits Since](https://img.shields.io/github/commits-since/secretum-inc/t2s/latest.svg)](https://github.com/secretum-inc/t2s/commits/)
+[![PyPi Downloads](http://pepy.tech/badge/t2s)](http://pepy.tech/project/t2s)
 [![Buy me a Coffee](https://img.shields.io/badge/buy%20me%20a-coffee-orange)](https://www.buymeacoffee.com/pndurette)
 
 ## Features
@@ -19,21 +19,21 @@ Write spoken `mp3` data to a file, a file-like object (bytestring) for further a
 
 ### Installation
 
-    $ pip install gTTS
+    $ pip install t2s
 
 ### Quickstart
 
 Command Line:
 
-    $ gtts-cli 'hello' --output hello.mp3
+    $ t2s-cli 'hello' --output hello.mp3
 
 Module:
 
-    >>> from gtts import gTTS
-    >>> tts = gTTS('hello')
+    >>> from t2s import T2S
+    >>> tts = T2S('hello')
     >>> tts.save('hello.mp3')
 
-See <http://gtts.readthedocs.org/> for documentation and examples.
+See <http://t2s.readthedocs.org/> for documentation and examples.
 
 ### Disclaimer
 
@@ -41,7 +41,7 @@ This project is *not* affiliated with Google or Google Cloud. Breaking upstream 
 
 ### Project
 
--   [Questions & community](https://github.com/pndurette/gTTS/discussions)
+-   [Questions & community](https://github.com/secretum-inc/t2s/discussions)
 -   [Changelog](CHANGELOG.rst)
 -   [Contributing](CONTRIBUTING.rst)
 
