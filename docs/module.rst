@@ -1,16 +1,16 @@
-Module (:mod:`t2s`)
+Module (:mod:`gtts`)
 ====================
 
 .. contents:: :local:
    :depth: 2
 
-gTTS (:class:`t2s.T2S`)
+gTTS (:class:`gtts.gTTS`)
 -------------------------
 
 .. automodule:: gtts.tts
    :members:
 
-Languages (:mod:`t2s.lang`)
+Languages (:mod:`gtts.lang`)
 ----------------------------
 
 .. note:: The easiest way to get a list of available languages is to print them

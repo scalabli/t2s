@@ -3,7 +3,7 @@
 Pre-processing and tokenizing
 =============================
 
-The :mod:`t2s.tokenizer` module powers the default pre-processing and tokenizing features of ``T2S`` and provides tools to easily expand them. :class:`t2s.tts.T2S` takes two arguments ``pre_processor_funcs`` (list of functions) and ``tokenizer_func`` (function). See: `Pre-processing`_, `Tokenizing`_.
+The :mod:`gtts.tokenizer` module powers the default pre-processing and tokenizing features of ``gTTS`` and provides tools to easily expand them. :class:`gtts.tts.gTTS` takes two arguments ``pre_processor_funcs`` (list of functions) and ``tokenizer_func`` (function). See: `Pre-processing`_, `Tokenizing`_.
 
 .. contents:: :local:
    :depth: 2
@@ -16,7 +16,7 @@ Pre-processor:
 
 Tokenizer:
     Function that takes text and returns it split into a list of `tokens` (strings).
-    In the ``T2S`` context, its goal is to cut the text into smaller segments that do not exceed the maximum character size allowed for each TTS API request, while making the speech sound natural and continuous.
+    In the ``gTTS`` context, its goal is to cut the text into smaller segments that do not exceed the maximum character size allowed for each TTS API request, while making the speech sound natural and continuous.
     It does so by splitting text where speech would naturaly pause (for example on ".") while handling where it should not (for example on "10.5" or "U.S.A."). Such rules are called `tokenizer cases`, which it takes a list of.
 
 Tokenizer case:
