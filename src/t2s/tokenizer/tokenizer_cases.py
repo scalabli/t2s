@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from t2s.tokenizer import RegexBuilder, symbols
+from quo import app, command
 
-
+@command()
+@app("--tone_marks")
 def tone_marks():
     """Keep tone-modifying punctuation by matching following character.
 
@@ -13,6 +15,8 @@ def tone_marks():
         pattern_func=lambda x: u"(?<={}).".format(x)).regex
 
 
+@command()
+@app("--period_comma")
 def period_comma():
     """Period and comma case.
 
@@ -30,7 +34,8 @@ def period_comma():
         pattern_args=symbols.PERIOD_COMMA,
         pattern_func=lambda x: r"(?<!\.[a-z]){} ".format(x)).regex
 
-
+@command()
+@app("--colon")
 def colon():
     """Colon case.
 
@@ -43,6 +48,8 @@ def colon():
         pattern_func=lambda x: r"(?<!\d){}".format(x)).regex
 
 
+@command()
+@app("--other_punctuation")
 def other_punctuation():
     """Match other punctuation.
 
@@ -60,6 +67,8 @@ def other_punctuation():
         pattern_func=lambda x: u"{}".format(x)).regex
 
 
+@command()
+@app("--legacy_all_punctuation")
 def legacy_all_punctuation():  # pragma: no cover b/c tested but Coveralls: ¯\_(ツ)_/¯
     """Match all punctuation.
 

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from t2s.langs import _main_langs
+from t2s.languages import _main_langs
 from warnings import warn
 import logging
+from quo import command, app
 
 __all__ = ['tts_langs']
 
@@ -9,7 +10,8 @@ __all__ = ['tts_langs']
 log = logging.getLogger(__name__)
 log.addHandler(logging.NullHandler())
 
-
+@command()
+@app("--tts_langs")
 def tts_langs():
     """Languages Google Text-to-Speech supports.
 
@@ -33,7 +35,8 @@ def tts_langs():
     log.debug("langs: {}".format(langs))
     return langs
 
-
+@command()
+@app("--_extra_langs")
 def _extra_langs():
     """Define extra languages.
 
@@ -51,6 +54,8 @@ def _extra_langs():
         'zh': 'Chinese (Mandarin)'
     }
 
+@command()
+@app("--_fallback_deprecated_lang")
 
 def _fallback_deprecated_lang(lang):
     """Languages Google Text-to-Speech used to support.

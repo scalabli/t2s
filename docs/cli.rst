@@ -1,12 +1,12 @@
-Command-line (:mod:`gtts-cli`)
+Command-line (:mod:`t2s-cli`)
 ==============================
 
-After installing the package, the ``gtts-cli`` tool becomes available::
+After installing the package, the ``t2s-cli`` tool becomes available::
 
 $ gtts-cli
 
-.. click:: gtts.cli:tts_cli
-   :prog: gtts-cli
+.. click:: t2s.cli:tts_cli
+   :prog: t2s-cli
    :show-nested:
 
 Examples
@@ -14,7 +14,7 @@ Examples
 
 List available languages::
 
-   $ gtts-cli --all
+   $ t2s-cli --all
 
 Read 'hello' to ``hello.mp3``::
 

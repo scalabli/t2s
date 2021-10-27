@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from gtts import gTTS, gTTSError, __version__
+from t2s import T2S, gTTSError, __version__
 from t2s.lang import tts_langs
-from quo import app, command, arg, File
+from quo import app, command, arg, autoversion
+from quo.type import File
 from quo.errors import BadParameter, UsageError, Outlier
 import logging
 import logging.config
@@ -112,57 +113,20 @@ def set_debug(clime, param, debug):
 @command(context_settings=CONTEXT_SETTINGS)
 @arg('text', metavar='<text>', required=False, callback=validate_text)
 @app('-f', '--file', metavar='<file>', type= File(encoding=sys_encoding()), help="Read from <file> instead of <text>.")
-@app(
-    '-o',
-    '--output',
-    metavar='<file>',
-    type= File(mode='wb'),
-    help="Write to <file> instead of stdout.")
-@app(
-    '-s',
-    '--slow',
-    default=False,
-    is_flag=True,
-    help="Read more slowly.")
-@app(
-    '-l',
-    '--lang',
-    metavar='<lang>',
-    default='en',
-    show_default=True,
-    callback=validate_lang,
-    help="IETF language tag. Language to speak in. List documented tags with --all.")
-@app(
-    '-t',
-    '--tld',
-    metavar='<tld>',
-    default='com',
-    show_default=True,
-    is_eager=True,  # Prioritize <tld> to ensure it gets set before <lang>
-    help="Top-level domain for the Google host, i.e https://translate.google.<tld>")
-@app(
-    '--nocheck',
-    default=False,
-    is_flag=True,
-    is_eager=True,  # Prioritize <nocheck> to ensure it gets set before <lang>
-    help="Disable strict IETF language tag checking. Allow undocumented tags.")
-@app(
-    '--all',
-    default=False,
-    is_flag=True,
-    is_eager=True,
-    expose_value=False,
-    callback=print_languages,
-    help="Print all documented available IETF language tags and exit.")
-@click.option(
-    '--debug',
-    default=False,
-    is_flag=True,
-    is_eager=True,  # Prioritize <debug> to see debug logs of callbacks
-    expose_value=False,
-    callback=set_debug,
-    help="Show debug information.")
-@autoversion(version=__version__)
+@app('-o', '--output', metavar='<file>', type= File(mode='wb'), help="Write to <file> instead of stdout.")
+@app('-s', '--slow', default=False, flag=True, help="Read more slowly.")
+@app('-l', '--lang', metavar='<lang>', default='en', show_default=True, callback=validate_lang, help="IETF language tag. Language to speak in. List documented tags with --all.")
+
+# Prioritize <tld> to ensure it gets set before <lang>
+@app('-t', '--tld', metavar='<tld>', default='com', show_default=True, eager=True, help="Top-level domain for the Google host, i.e https://translate.google.<tld>")
+
+# Prioritize <nocheck> to ensure it gets set before <lang>
+@app('--nocheck', default=False, flag=True, eager=True, help="Disable strict IETF language tag checking. Allow undocumented tags.")
+@app('--all', default=False, flag=True, eager=True, expose_value=False, callback=print_languages, help="Print all documented available IETF language tags and exit.")
+
+# Pruoritize <debug> to see debug logs of callbacks
+@app('--debug', default=False, flag=True, eager=True, expose_value=False, callback=set_debug, help="Show debug information.")
+#@autoversion(version=__version__)
 def tts_cli(text, file, output, slow, tld, lang, nocheck):
     """ Read <text> to mp3 format using Google Translate's Text-to-Speech API
     (set <text> or --file <file> to - for standard input)
@@ -189,7 +153,7 @@ def tts_cli(text, file, output, slow, tld, lang, nocheck):
 
     # TTS
     try:
-        tts = gTTS(
+        tts = T2S(
             text=text,
             lang=lang,
             slow=slow,

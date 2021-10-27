@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from t2s.tokenizer import PreProcessorRegex, PreProcessorSub, symbols
 import re
+from quo import app, command
 
-
+@command()
+@app("--tone_marks")
 def tone_marks(text):
     """Add a space after tone-modifying punctuation.
 
@@ -16,6 +18,8 @@ def tone_marks(text):
         repl=' ').run(text)
 
 
+@command()
+@app("--end_of_line")
 def end_of_line(text):
     """Re-form words cut by end-of-line hyphens.
 
@@ -28,6 +32,8 @@ def end_of_line(text):
         repl='').run(text)
 
 
+@command()
+@app("--abbreviations")
 def abbreviations(text):
     """Remove periods after an abbreviation from a list of known
     abbrevations that can be spoken the same without that period. This
@@ -47,7 +53,8 @@ def abbreviations(text):
         search_func=lambda x: r"(?<={})(?=\.).".format(x),
         repl='', flags=re.IGNORECASE).run(text)
 
-
+@command()
+@app("--word_sub")
 def word_sub(text):
     """Word-for-word substitutions."""
     return PreProcessorSub(
