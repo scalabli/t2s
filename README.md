@@ -5,12 +5,11 @@ Write spoken `mp3` data to a file, a file-like object (bytestring) for further a
 <http://t2s.readthedocs.org/>
 
 [![PyPI version](https://img.shields.io/pypi/v/t2s.svg)](https://pypi.org/project/t2s/)
-[![Python versions](https://img.shields.io/pypi/pyversions/t2s.svg)](https://pypi.org/project/gTTS/)
+[![Python versions](https://img.shields.io/pypi/pyversions/t2s.svg)](https://pypi.org/project/t2s/)
 [![Tests workflow](https://github.com/secretum-inc/t2s/workflows/Tests/badge.svg)](https://github.com/secretum-inc/t2s/actions)
-[![codecov](https://codecov.io/gh/pndurette/gTTS/branch/master/graph/badge.svg)](https://codecov.io/gh/pndurette/gTTS)
 [![Commits Since](https://img.shields.io/github/commits-since/secretum-inc/t2s/latest.svg)](https://github.com/secretum-inc/t2s/commits/)
 [![PyPi Downloads](http://pepy.tech/badge/t2s)](http://pepy.tech/project/t2s)
-[![Buy me a Coffee](https://img.shields.io/badge/buy%20me%20a-coffee-orange)](https://www.buymeacoffee.com/pndurette)
+[![Buy me a Coffee](https://img.shields.io/badge/buy%20me%20a-coffee-orange)](https://www.buymeacoffee.com/gerrishon)
 
 ## Features
 
