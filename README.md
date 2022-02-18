@@ -1,7 +1,8 @@
 # t2s
 
 **t2s** (*Text-to-Speech*), a Python library and CLI tool to interface with Google Translate's text-to-speech API. 
-Write spoken `mp3` data to a file, a file-like object (bytestring) for further audio manipulation, or `stdout`. Or simply pre-generate Google Translate TTS request URLs to feed to an external program.
+Compose spoken `mp3` or `m4a` data to a file, a file-like object (bytestring) for further audio manipulation, or `stdout` or simply pre-produce Google Translate Text to speech demand URLs to feed to an outside program.
+
 <http://t2s.readthedocs.org/>
 
 [![PyPI version](https://img.shields.io/pypi/v/t2s.svg)](https://pypi.org/project/t2s/)
