@@ -2,7 +2,7 @@
 from t2s import T2S, gTTSError, __version__
 from t2s.lang import tts_langs
 from quo import app, command, arg, autoversion
-from quo.type import File
+from quo.types import File
 from quo.errors import BadParameter, UsageError, Outlier
 import logging
 import logging.config
